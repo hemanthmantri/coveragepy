@@ -1,5 +1,5 @@
 pipeline:
-    name: test-coverage-py1
+    name: test-coverage-py-renamed-from-git
     identifier: testcoveragepy
     allowStageExecutions: false
     projectIdentifier: TestMantriProject
