@@ -1,0 +1,19 @@
+template:
+    name: New Step Name
+    identifier: new_step_name
+    versionLabel: Version1
+    type: Step
+    projectIdentifier: TestMantriProject
+    orgIdentifier: MantriOrg
+    tags: {}
+    spec:
+        type: RunTests
+        spec:
+            connectorRef: account.harnessImage
+            image: alpine
+            language: Java
+            buildTool: Maven
+            args: test
+            runOnlySelectedTests: true
+            preCommand: echo "hello"
+            postCommand: echo "bye"
