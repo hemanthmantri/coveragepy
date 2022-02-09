@@ -1,5 +1,5 @@
 template:
-    name: New Step Name
+    name: testTemplate123
     identifier: new_step_name
     versionLabel: Version1
     type: Step
