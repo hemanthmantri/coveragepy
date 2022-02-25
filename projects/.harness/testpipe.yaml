@@ -5,10 +5,37 @@ pipeline:
     projectIdentifier: TestMantriProject
     orgIdentifier: MantriOrg
     tags: {}
-    stages: []
+    stages:
+        - stage:
+              name: test-build-stage
+              identifier: testbuildstage
+              type: CI
+              spec:
+                  cloneCodebase: true
+                  infrastructure:
+                      type: VM
+                      spec:
+                          type: Pool
+                          spec:
+                              identifier: "1234"
+                  execution:
+                      steps:
+                          - step:
+                                type: Run
+                                name: RunHello
+                                identifier: RunHello
+                                spec:
+                                    command: echo "Hello World"
     flowControl:
         barriers:
             - name: test barrier
               identifier: test_barrier
             - name: random barrier
               identifier: random_barrier
+    properties:
+        ci:
+            codebase:
+                connectorRef: mantrigithub
+                build: <+input>
+                sslVerify: true
+                prCloneStrategy: SourceBranch
