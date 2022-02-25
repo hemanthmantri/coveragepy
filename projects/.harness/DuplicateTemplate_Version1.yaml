@@ -1,0 +1,27 @@
+template:
+    name: Duplicate-Template
+    identifier: DuplicateTemplate
+    versionLabel: Version1
+    type: Step
+    projectIdentifier: TestMantriProject
+    orgIdentifier: MantriOrg
+    tags: {}
+    spec:
+        type: RunTests
+        spec:
+            connectorRef: account.harnessImage
+            image: alpine
+            language: Java
+            buildTool: Maven
+            args: test
+            runOnlySelectedTests: true
+            preCommand: echo "hello"
+            postCommand: echo "bye"
+        when:
+            stageStatus: All
+        failureStrategies:
+            - onFailure:
+                  errors:
+                      - AllErrors
+                  action:
+                      type: Ignore
