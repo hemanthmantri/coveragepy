@@ -1,0 +1,33 @@
+pipeline:
+    name: cd-pipeline-try
+    identifier: cdpipelinetry
+    allowStageExecutions: false
+    projectIdentifier: TestMantriProject
+    orgIdentifier: MantriOrg
+    tags: {}
+    properties:
+        ci:
+            codebase:
+                connectorRef: mantrigithub
+                build: <+input>
+    stages:
+        - stage:
+              name: cd-build
+              identifier: cdbuild
+              type: CI
+              spec:
+                  cloneCodebase: true
+                  infrastructure:
+                      type: VM
+                      spec:
+                          type: Pool
+                          spec:
+                              identifier: "1234"
+                  execution:
+                      steps:
+                          - step:
+                                type: Run
+                                name: hello step
+                                identifier: hello_step
+                                spec:
+                                    command: echo "Hello"
