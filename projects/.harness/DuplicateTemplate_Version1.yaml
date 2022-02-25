@@ -19,9 +19,4 @@ template:
             postCommand: echo "bye"
         when:
             stageStatus: All
-        failureStrategies:
-            - onFailure:
-                  errors:
-                      - AllErrors
-                  action:
-                      type: Ignore
+        description: add desc
