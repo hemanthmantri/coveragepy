@@ -19,4 +19,4 @@ template:
             postCommand: echo "bye"
         when:
             stageStatus: All
-        description: add desc
+        description: add desc1
