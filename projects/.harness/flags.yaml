@@ -22,6 +22,6 @@ featureFlags:
         default:
           onVariation: Gamma
           offVariation: Gamma
-        state: "off"
+        state: "on"
   projectIdentifier: TestMantriProject
   orgIdentifier: MantriOrg
