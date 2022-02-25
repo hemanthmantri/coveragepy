@@ -1,0 +1,39 @@
+pipeline:
+    name: test-pipe
+    identifier: testpipe
+    allowStageExecutions: false
+    projectIdentifier: TestMantriProject
+    orgIdentifier: MantriOrg
+    tags: {}
+    stages:
+        - stage:
+              name: Approve Me
+              identifier: Approve_Me
+              description: ""
+              type: Approval
+              spec:
+                  execution:
+                      steps:
+                          - stepGroup:
+                                name: hello
+                                identifier: hello
+                                steps:
+                                    - step:
+                                          type: ShellScript
+                                          name: runhello
+                                          identifier: runhello
+                                          spec:
+                                              shell: Bash
+                                              onDelegate: true
+                                              source:
+                                                  type: Inline
+                                                  spec:
+                                                      script: echo "hello world"
+                                              environmentVariables: []
+                                              outputVariables: []
+                                              executionTarget: {}
+                                          timeout: 10m
+                                failureStrategies: []
+                                spec: {}
+                  serviceDependencies: []
+              tags: {}
