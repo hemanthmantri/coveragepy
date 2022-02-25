@@ -1,0 +1,28 @@
+template:
+    name: New Stage Name
+    identifier: new_stage_name
+    versionLabel: Version2
+    type: Stage
+    projectIdentifier: TestMantriProject
+    orgIdentifier: MantriOrg
+    tags: {}
+    spec:
+        type: FeatureFlag
+        spec:
+            execution:
+                steps:
+                    - step:
+                          type: ShellScript
+                          name: teea
+                          identifier: teea
+                          spec:
+                              shell: Bash
+                              onDelegate: true
+                              source:
+                                  type: Inline
+                                  spec:
+                                      script: ffafer
+                              environmentVariables: []
+                              outputVariables: []
+                              executionTarget: {}
+                          timeout: 10m
