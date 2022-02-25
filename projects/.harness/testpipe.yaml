@@ -6,3 +6,9 @@ pipeline:
     orgIdentifier: MantriOrg
     tags: {}
     stages: []
+    flowControl:
+        barriers:
+            - name: test barrier
+              identifier: test_barrier
+            - name: random barrier
+              identifier: random_barrier
