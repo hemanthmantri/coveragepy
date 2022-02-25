@@ -17,5 +17,11 @@ featureFlags:
           value: Oct
         - identifier: Delta
           value: Dec
+      environments:
+      - identifier: temp
+        default:
+          onVariation: Gamma
+          offVariation: Gamma
+        state: "off"
   projectIdentifier: TestMantriProject
   orgIdentifier: MantriOrg
