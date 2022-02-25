@@ -1,0 +1,21 @@
+featureFlags:
+  flags:
+  - flag:
+      name: multi-var-flag
+      identifier: multivarflag
+      description: ""
+      permanent: true
+      spec:
+        type: string
+        default:
+          onVariation: Gamma
+          offVariation: Gamma
+        variations:
+        - identifier: Alpha
+          value: Aug
+        - identifier: Gamma
+          value: Oct
+        - identifier: Delta
+          value: Dec
+  projectIdentifier: TestMantriProject
+  orgIdentifier: MantriOrg
